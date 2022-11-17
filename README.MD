@@ -49,19 +49,47 @@ tsc -v
 ```javascript
 tsc index.ts
 ```
+----
 ###  Configuring the TypeScript Compiler 
+The compiler can be configured using a tsconfig.json file.
+You can have TypeScript create tsconfig.json with the recommended settings with:
 -> terminal
 ```
 tsc --init
 ```
+ Here is an example of more things you could add to the **tsconfig.json file**:
 - tsconfig.json
+
+```javascipt
+//tsconfig.json
+  /* Modules */                              
+     "rootDir": "./src",  -> change the source  
+ /* Emit */
+  "sourceMap": true, 
+  "outDir": "./dist",  -> Specify an output folder for all emitted files. */
+    "removeComments": true,   
+
+```
+Then, type ***tsc*** in terminal and compile our code simply by running tsc without any arguments so we don't have to type index.ts we just run tse and this will compile all typescript files in this project.
+```
+tsc
+```
+### Debug
+
+```
+//launch.json
+ "preLaunchTask": "tsc: build - tsconfig.json",
+```
+
+
 
 - enum
 - function
 ---
 Resources
-- [TypeScript](https://www.typescriptlang.org/)
-- [Youtube- TypeScript Tutorial for Beginners [2022]](https://www.youtube.com/watch?v=d56mG7DezGs&t=949s)
-- [TypeScript 基礎入門：從型別談起](https://hackmd.io/@Heidi-Liu/typescript)
+- [TypeScript- Document](https://www.typescriptlang.org/)
+- [W3C- TypeScript Tutoria](https://www.w3schools.com/typescript/index.php)
+- [Youtube- TypeScript Tutorial for Beginners [2022]- Programming with Mosh](https://www.youtube.com/watch?v=d56mG7DezGs&t=949s)
 - [TypeScript vs JavaScript: The Difference You Should Know](https://radixweb.com/blog/typescript-vs-javascript)
+- [TypeScript 基礎入門：從型別談起](https://hackmd.io/@Heidi-Liu/typescript)
 - [網頁工程師必學！TypeScript初探教學](https://rookiesavior.net/2022/05/04/program-yiru-web-engineers-must-learn-a-preliminary-study-of-typescript-teaching/)
